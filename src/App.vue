@@ -13,7 +13,7 @@ import SiteHeader  from '@/components/HeaderComponent.vue';
 /* importo il componente Main del sito */
 import SiteMain  from '@/components/MainComponent.vue';
 
-/* import axios from "axios"; */
+
 
 export default {
   name: 'App',
