@@ -1,7 +1,11 @@
 <template>
   <header id="site_header">
-    <nav class="bg_header">
+    <nav class="bg_header d-flex align-items-center">
+      <div class="logo mx-3">
+        <img src="../assets/logo_spotify.png" alt="logo">
 
+      </div>
+      <!-- /.logo -->
     </nav>
 
   </header>
@@ -21,6 +25,11 @@ export default {
 <style scoped lang="scss">
 nav{
   height: 50px;
+    .logo{
+      width: 36px;
+      aspect-ratio: 1 / 1;
+    }
+      
 }
 
 
