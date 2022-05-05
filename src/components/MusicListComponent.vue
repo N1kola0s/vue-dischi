@@ -1,21 +1,21 @@
 <template>
     <div class="col g-3 h-100" >
         <div class="card bg_header p-3">
-            <img :src="album.poster" :alt="album.title" class="card-img-top">
+            <img :src="music.poster" :alt="music.title" class="card-img-top">
             <!-- card-img-top -->
 
             <div class="card-body text-center">
-                <h5 class="card-title text-uppercase lh-0">{{album.title}}</h5>
+                <h5 class="card-title text-uppercase lh-0">{{music.title}}</h5>
 
                 <div class="card-text py-4">
 
                     <div class=album_title>
-                        {{album.author}}
+                        {{music.author}}
                     </div>
                     <!-- /.album_title -->
                     
                     <div class="album_year">
-                        {{album.year}}
+                        {{music.year}}
                     </div>
                     <!-- album_year -->
                 </div>
@@ -34,7 +34,7 @@
 export default {
     name:'MusicList',
     props:{
-        album: Object
+        music: Object
     }
 };
 </script>

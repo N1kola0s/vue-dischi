@@ -5,7 +5,7 @@
         <section class="albums" v-if="!loading">
                 <div class="container h-100 p-5">
                     <div class="row row-cols-5 h-100">
-                           <MusicList :album="album" v-for="(album, index) in albums" :key="index" />
+                           <MusicList :music="album" v-for="(album, index) in albums" :key="index" />
                     </div>
                     <!-- /.row -->
                 </div>
