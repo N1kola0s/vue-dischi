@@ -106,6 +106,11 @@ import axios from "axios";
                     .card-body{
                         padding: 1rem 0rem;
 
+                        .card-title{
+                            height: 10px;
+                            margin-bottom: 3rem;
+                        }
+
                             h5{
                             color:white;
                         }
