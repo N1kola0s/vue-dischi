@@ -38,8 +38,10 @@
                 <!-- /.container -->
         </section>
         <!-- albums -->
+
+        <!-- Bonus: Creare un componente loader da visualizzare fintantoché i risultati non sono pronti. -->
         
-        <div class="d-flex min-vh-100 align-items-center justify-content-center text-white" v-else>
+        <div class="loader d-flex min-vh-100 align-items-center justify-content-center text-white" v-else>
             <h1>loading ...</h1>
         </div>
 
