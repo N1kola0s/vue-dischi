@@ -5,6 +5,10 @@ import App from './App.vue'
 const bootstrap = require('bootstrap')
 Vue.use(bootstrap)
 
+// Bootstrap completo
+/* import 'bootstrap'
+import 'bootstrap/dist/css/bootstrap.min.css' */
+
 Vue.config.productionTip = false
 
 new Vue({
