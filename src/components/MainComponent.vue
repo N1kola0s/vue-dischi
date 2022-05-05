@@ -25,10 +25,10 @@
                                             </div>
                                             <!-- album_year -->
                                         <div>
-                                        <!-- /.card-text -->
+                                        <!-- /.card_text -->
                                         
                                     </div>
-                                    <!-- /.card-body -->
+                                    <!-- /.card_body -->
 
                                 
                                 
