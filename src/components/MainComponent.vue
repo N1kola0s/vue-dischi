@@ -24,22 +24,12 @@
                                                 {{album.year}}
                                             </div>
                                             <!-- album_year -->
-                                        <div>
-                                        <!-- /.card_text -->
-                                        
-                                    </div>
-                                    <!-- /.card_body -->
-
-                                
-                                
-                                
                                         </div>
-                                        <!--/.card-text -->
+                                        <!-- /.card-text -->                                     
                                     </div>
-                                    <!-- /.card-body -->
+                                    <!-- /card-body -->
                                 </div>
                                 <!-- /.card -->
-
                             </div>
                             <!-- /.col -->
                     </div>
