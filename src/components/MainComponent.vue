@@ -1,4 +1,5 @@
 <template>
+
     <main id="site_main" class="bg_main">
 
         <section class="albums" v-if="!loading">
@@ -49,6 +50,7 @@
         <!-- albums -->
 
     </main>
+
 </template>
 
 <script>
