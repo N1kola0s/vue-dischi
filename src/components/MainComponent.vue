@@ -38,6 +38,10 @@
                 <!-- /.container -->
         </section>
         <!-- albums -->
+        
+        <div class="d-flex min-vh-100 align-items-center justify-content-center text-white" v-else>
+            <h1>loading ...</h1>
+        </div>
 
     </main>
 
