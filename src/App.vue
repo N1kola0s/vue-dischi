@@ -1,26 +1,31 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <div class="alert alert-success">This is a sweet success bootsrap message</div>
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <SiteHeader />
+    <SiteMain />
     
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+/* importo il componente Header del sito */
+import SiteHeader  from '@/components/HeaderComponent.vue';
+
+/* importo il componente Main del sito */
+import SiteMain  from '@/components/MainComponent.vue';
+
 /* import axios from "axios"; */
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    SiteHeader,
+    SiteMain
   }
 }
 </script>
 
 <style lang="scss">
 /* importo lo stile */
-  @import '@/assets/scss/style';
+  @import '@/assets/scss/style.scss';
 
 </style>
