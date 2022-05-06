@@ -53,6 +53,10 @@ import axios from "axios";
                     this.loading = false;
                     /* console.log(this.url) */
                 })
+                .catch(error => {
+                    console.log(error);
+                    this.error = `Ops! ${error.message}`
+                })
                     
             
         }
