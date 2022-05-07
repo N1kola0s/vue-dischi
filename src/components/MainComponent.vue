@@ -5,7 +5,7 @@
         <section class="albums" v-if="!loading">
                 <div class="container h-100 p-5">
                     <div class="row row-cols-5 h-100">
-                           <MusicList :music="album" v-for="(album, index) in albums" :key="index" />
+                           <MusicList :music="album" v-for="(album, index) in filteredAlbums" :key="index" />
                     </div>
                     <!-- /.row -->
                 </div>
@@ -24,8 +24,12 @@
 </template>
 
 <script>
+//importo il componente MusicList nel tag script del componente Main
 import MusicList from '@/components/MusicListComponent.vue';
+//importo axios nel tag script del componente Main
 import axios from "axios"; 
+//importo il modulo state nel tag script del componente Main
+import state from "@/state.js";
 
     export default {
         name: 'MainComponent',
@@ -40,8 +44,8 @@ import axios from "axios";
                 error:null,
             };
         },
-        methods:{},
-        mounted(){
+        methods:{
+            callApi(){
                 axios
                 .get(this.url)
                 .then(response => {
@@ -56,17 +60,35 @@ import axios from "axios";
                 .catch(error => {
                     console.log(error);
                     this.error = `Ops! ${error.message}`
-                })
-                    
-            
+                });
+
+            },
+        },
+        mounted(){
+            this.callApi(); 
+        },
+        computed: {
+            //filtro l'array albums nella computed property 'filteredAlbums' con l'oggetto reattivo 'state' per filtrare il genere musicale selezionato nel componente Header
+            filteredAlbums(){
+                //imposto una condizione che verifica se state.selectedValue non sia vuoto
+                if(state.selectedValue){
+                    //in caso positivo applicando filter all'array albums genero un nuovo array con i dati filtrati
+                    return this.albums.filter(album =>{
+                        //utilizzo state.selectedValue per filtrare i dati in modo da verificare che valore di state che corrisponde a ciò che verrà selezionato nel select del componente header (trasformati i suoi caratteri in formato minuscolo) siano inclusi come valore (stringa) nella proprietà dell'ogetto al percorso album.genre dell'array albums (trasformati i suoi caratteri in formato minuscolo).  
+                        return album.genre.toLowerCase().includes(state.selectedValue.toLowerCase())
+                    })
+                } else  {
+                    //in caso negativo, ossia che lo state.selectedValue sia vuoto, restituisco l'array di origine
+                    return this.albums
+                }
+            }
         }
         
     };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped lang="scss">
+<style lang="scss">
     main{
-            height: calc(100% - 50px);   
+            height: calc( 100% - 100px);
         }
 </style>

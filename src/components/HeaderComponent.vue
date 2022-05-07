@@ -6,8 +6,11 @@
             <img src="../assets/logo_spotify.png" alt="logo">
           </div>
         <!-- /.logo -->
-
-        <SelectComponent v-model="selectedValue" @changeSelect="select" />
+        
+        <!-- utilizzo il componente figlio select nel componente genitore Header--> 
+        <!-- imposto la direttiva v-model bindata sul valore (Stringa) di selctedValue  -->
+        <!-- imposto l'evento 'select'. Quando questo evento viene emesso passerà al genitore il valore del componente figlio grazie alla funzione $emit-->
+        <SelectComponent v-model="selectedValue" @changeSelect="select" /> 
     
       </nav>
       <!-- /nav -->
@@ -18,12 +21,14 @@
 </template>
 
 <script>
+//importo il componente SelectComponent nel tag script del componente Main
 import SelectComponent from '@/components/SelectComponent.vue'
-/* src/components/SiteHeader.vue */
+//importo il modulo state nel tag script del componente Main
 import state from "@/state.js";
 
 export default {
   name: 'HeaderComponent',
+  //definisco il componente SelectComponent
   components:{
     SelectComponent,
 },
@@ -34,16 +39,15 @@ export default {
   },
   methods:{
     select(){
-      console.log(this.select)
+      /* console.log(this.select) */
       state.selectedValue = this.selectedValue;
-      console.log(state.selectedValue);
+      /* console.log(state.selectedValue); */
     }
   }
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped lang="scss">
+<style lang="scss">
   header{
       height: 50px;
 
@@ -59,7 +63,5 @@ export default {
         }
 
       }
-      
-        
   }
 </style>

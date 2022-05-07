@@ -43,7 +43,7 @@ export default {
 
     .card{
         color: #959595;
-        max-height: 400px;
+        /* min-height: 400px; */
         
             .card-img-top{
                 object-position: top;
