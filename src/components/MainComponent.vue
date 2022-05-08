@@ -3,8 +3,8 @@
     <main id="site_main" class="bg_main">
 
         <section class="albums" v-if="!loading">
-                <div class="container h-100 p-5">
-                    <div class="row row-cols-5 h-100">
+                <div class="container p-5">
+                    <div class="row row-cols-5">
                            <MusicList :music="album" v-for="(album, index) in filteredAlbums" :key="index" />
                     </div>
                     <!-- /.row -->
@@ -89,6 +89,6 @@ import state from "@/state.js";
 
 <style lang="scss">
     main{
-            height: calc( 100% - 100px);
+         min-height: calc(100vh - 100px);
         }
 </style>

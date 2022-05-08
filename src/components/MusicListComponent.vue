@@ -1,5 +1,5 @@
 <template>
-    <div class="col g-3 h-100" >
+    <div class="col g-3" >
         <div class="card bg_header p-3">
             <img :src="music.poster" :alt="music.title" class="card-img-top">
             <!-- card-img-top -->

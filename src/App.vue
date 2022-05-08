@@ -2,6 +2,7 @@
   <div id="app">
     <SiteHeader />
     <SiteMain />
+    <SiteFooter />
     
   </div>
 </template>
@@ -13,13 +14,17 @@ import SiteHeader  from '@/components/HeaderComponent.vue';
 /* importo il componente Main del sito */
 import SiteMain  from '@/components/MainComponent.vue';
 
+/* importo il componente Main del sito */
+import SiteFooter from '@/components/FooterComponent.vue'
+
 
 
 export default {
   name: 'App',
   components: {
     SiteHeader,
-    SiteMain
+    SiteMain,
+    SiteFooter
   }
 }
 </script>
