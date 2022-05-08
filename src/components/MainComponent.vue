@@ -4,6 +4,8 @@
 
         <section class="albums" v-if="!loading">
                 <div class="container p-5">
+
+
                     <div class="row row-cols-5">
                            <MusicList :music="album" v-for="(album, index) in filteredAlbums" :key="index" />
                     </div>
@@ -77,7 +79,16 @@ import state from "@/state.js";
                         //utilizzo state.selectedValue per filtrare i dati in modo da verificare che valore di state che corrisponde a ciò che verrà selezionato nel select del componente header (trasformati i suoi caratteri in formato minuscolo) siano inclusi come valore (stringa) nella proprietà dell'ogetto al percorso album.genre dell'array albums (trasformati i suoi caratteri in formato minuscolo).  
                         return album.genre.toLowerCase().includes(state.selectedValue.toLowerCase())
                     })
-                } else  {
+                } 
+
+                if(state.selectedAuthors){
+                    return this.albums.filter(album =>{
+                        return album.author.toLowerCase().includes(state.selectedAuthors.toLowerCase())
+                        })
+                    
+                }
+                
+                else  {
                     //in caso negativo, ossia che lo state.selectedValue sia vuoto, restituisco l'array di origine
                     return this.albums
                 }
@@ -90,5 +101,11 @@ import state from "@/state.js";
 <style lang="scss">
     main{
          min-height: calc(100vh - 100px);
+
+         .artist_selector{
+            /* width: 200px; */
+            padding-bottom: 2rem;
+         }
+
         }
 </style>

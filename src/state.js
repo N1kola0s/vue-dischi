@@ -4,7 +4,8 @@
 import Vue from 'vue'
 // crea un oggetto usando .observable
 const state = Vue.observable({
-    selectedValue: ''
+    selectedValue: '',
+    selectedAuthors: ''
 })
 
 // esporta lo state
